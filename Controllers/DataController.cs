@@ -3,37 +3,47 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using ClassLibraryCryptoBD2;
 using System.Linq;
+using System.IO;
+using System;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CryptBD2App.Controllers
 {
-    [Route("[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class DataController : ControllerBase
     {
-        Aes myAes = Aes.Create();
-        Data data = new();
+        readonly Aes myAes = Aes.Create();
+        readonly Data data = new();
+
+        public class TextoPredeterminado
+        {
+            public string TextoIngresado = "hi";
+
+        }
 
         // GET: <DataController>
         [HttpGet]
         public string[] Get()
         {
-            string values = data.TextoEncriptado.ToString() + "," + data.TextoDesencriptado;
+            string values;
+            if (data.TextoEncriptado == null || data.TextoDesencriptado == null)
+            {
+                TextoPredeterminado texto = new();
+                Post(texto);
+                values = Convert.ToBase64String(data.TextoEncriptado).ToString() + "," + data.TextoDesencriptado;
+            }
+            else
+                values = Convert.ToBase64String(data.TextoEncriptado).ToString() + "," + data.TextoDesencriptado;
             return values.Split(",");
         }
 
-        // GET <DataController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        // POST <DataController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] TextoPredeterminado text)
         {
+            string value = text.TextoIngresado ?? "hi";
+            Console.WriteLine(value);
             data.TextoIngresado = value;
             byte[] encrypted = Crypt.EncryptStringToBytes_Aes(value, myAes.Key, myAes.IV);
             data.TextoEncriptado = encrypted;
@@ -44,8 +54,6 @@ namespace CryptBD2App.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
-
-
         }
 
         // DELETE <DataController>/5
