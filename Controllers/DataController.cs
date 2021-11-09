@@ -5,6 +5,7 @@ using ClassLibraryCryptoBD2;
 using System.Linq;
 using System.IO;
 using System;
+using System.Diagnostics;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,35 +16,30 @@ namespace CryptBD2App.Controllers
     public class DataController : ControllerBase
     {
         readonly Aes myAes = Aes.Create();
-        readonly Data data = new();
-
-        public class TextoPredeterminado
-        {
-            public string TextoIngresado = "hi";
-
-        }
+        static Data data = new();
 
         // GET: <DataController>
         [HttpGet]
         public string[] Get()
         {
+            Debug.WriteLine(data.TextoEncriptado + "1");
             string values;
-            if (data.TextoEncriptado == null || data.TextoDesencriptado == null)
+            if (data.TextoEncriptado != null & data.TextoDesencriptado != null)
             {
-                TextoPredeterminado texto = new();
-                Post(texto);
                 values = Convert.ToBase64String(data.TextoEncriptado).ToString() + "," + data.TextoDesencriptado;
+                return values.Split(",");
             }
             else
-                values = Convert.ToBase64String(data.TextoEncriptado).ToString() + "," + data.TextoDesencriptado;
-            return values.Split(",");
+                return new string[] { "sin valor", "sin valor" };
         }
 
         [HttpPost]
-        public void Post([FromBody] TextoPredeterminado text)
+        public void Post([FromBody] Data text)
         {
-            string value = text.TextoIngresado ?? "hi";
-            Console.WriteLine(value);
+            string value;
+            if (text.TextoIngresado == null)
+                value = "sin valor";
+            else value = text.TextoIngresado;
             data.TextoIngresado = value;
             byte[] encrypted = Crypt.EncryptStringToBytes_Aes(value, myAes.Key, myAes.IV);
             data.TextoEncriptado = encrypted;
