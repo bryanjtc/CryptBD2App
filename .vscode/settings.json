@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net5.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/b702baba-224e-4f9a-af10-3759f54e3d10/resourceGroups/BDD2TestApp/providers/Microsoft.Web/sites/CryptBD2App20211109111641"
+}
