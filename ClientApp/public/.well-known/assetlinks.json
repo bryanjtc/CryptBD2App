@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "net.azurewebsites.cryptbd2app",
+                     "sha256_cert_fingerprints": ["C1:B8:89:F8:7E:BA:C5:6C:8A:E2:71:1E:2B:A4:53:2C:CB:FE:33:11:F8:D6:63:DC:42:D7:54:07:43:CD:93:FE"] }
+      }
+]
