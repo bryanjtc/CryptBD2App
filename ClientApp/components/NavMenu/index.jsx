@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
-import './styles.css';
+import Link from 'next/link';
+import styles from './styles.module.css';
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
@@ -31,24 +31,26 @@ export class NavMenu extends Component {
           expand="xxl"
         >
           <Container>
-            <Navbar.Brand as={Link} to="/">CryptBD2App - Grupo Gamma</Navbar.Brand>
-            <Navbar.Toggle onClick={this.toggleNavbar} className="mr-2" />
+            <Link href="/" passHref>
+              <Navbar.Brand>CryptBD2App - Grupo Gamma</Navbar.Brand>
+            </Link>
+            <Navbar.Toggle className="mr-2" />
             <Navbar.Collapse className="d-sm-inline-flex flex-sm-row-reverse">
               <ul className="navbar-nav flex-grow">
                 <Nav.Item>
-                  <Nav.Link as={Link} className="text-dark" to="/">
-                    Home
-                  </Nav.Link>
+                  <Link href="/" passHref>
+                    <Nav.Link className="text-dark">Home</Nav.Link>
+                  </Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link as={Link} className="text-dark" to="/counter">
-                    Counter
-                  </Nav.Link>
+                  <Link href="/counter" passHref>
+                    <Nav.Link className="text-dark">Counter</Nav.Link>
+                  </Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link as={Link} className="text-dark" to="/fetch-data">
-                    Fetch data
-                  </Nav.Link>
+                  <Link href="/fetch-data" passHref>
+                    <Nav.Link className="text-dark">Fetch data</Nav.Link>
+                  </Link>
                 </Nav.Item>
               </ul>
             </Navbar.Collapse>

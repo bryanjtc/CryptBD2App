@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
+import Head from 'next/head';
+
 export default function Home() {
   const [tLibre, setTLibre] = useState('');
   const [tEncriptado, setTEncriptado] = useState('');
@@ -39,9 +41,22 @@ export default function Home() {
       console.log(`error: `, error);
     }
   };
-
   return (
     <div>
+      <Head>
+        <html lang="en" />
+        <title>Create Next App</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <title>CryptBD2App</title>
+        <meta name="description" content="Testing encryption using dll" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
+
       <h2>Tarea</h2>
       <Form onSubmit={(e) => handleSubmitTlibre(e)}>
         <Form.Group className="mb-3" controlId="tLibre">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './styles.module.css';
 
 export default class Counter extends Component {
   static displayName = Counter.name;
@@ -26,7 +27,7 @@ export default class Counter extends Component {
           Current count: <strong>{this.state.currentCount}</strong>
         </p>
 
-        <button className="btn btn-primary" onClick={this.incrementCounter}>
+        <button className={`btn ${styles["btn-primary"]}`} onClick={this.incrementCounter}>
           Increment
         </button>
       </div>

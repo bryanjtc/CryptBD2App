@@ -1,0 +1,27 @@
+{
+    "name": "Crypto BDD2",
+    "short_name": "CryptoBDD2",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/pwa-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/pwa-512x512.png",
+            "type": "image/png",
+            "sizes": "512x12"
+        },
+        {
+            "src": "/pwa-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ]
+}
