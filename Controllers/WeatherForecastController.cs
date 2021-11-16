@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CryptBD2App.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("fetch-data/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

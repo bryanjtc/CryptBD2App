@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Head from 'next/head';
 
 export default class FetchData extends Component {
   static displayName = FetchData.name;
@@ -48,6 +49,9 @@ export default class FetchData extends Component {
 
     return (
       <div>
+        <Head>
+          <title>Fetch data</title>
+        </Head>
         <h1 id="tabelLabel">Weather forecast</h1>
         <p>This component demonstrates fetching data from the server.</p>
         {contents}

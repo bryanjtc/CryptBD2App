@@ -22,18 +22,15 @@ export default function Home() {
   const handleSubmitTencriptado = (event) => {
     event.preventDefault();
     setTDesencriptadoFinal(tDesencriptado);
-    console.log(tDesencriptadoFinal);
   };
 
   const axiosPostCall = async (postText) => {
     const bodyText = {
       TextoIngresado: postText,
     };
-    console.log(bodyText);
     try {
       await axios.post('data', bodyText);
       await axios.get('data').then((res) => {
-        console.log(res);
         setTEncriptado(res.data[0]);
         setTDesencriptado(res.data[1]);
       });
@@ -44,17 +41,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <html lang="en" />
-        <title>Create Next App</title>
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <title>CryptBD2App</title>
-        <meta name="description" content="Testing encryption using dll" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="16x16" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-        <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#ffffff" />
+        <title>HomePage</title>
       </Head>
 
       <h2>Tarea</h2>

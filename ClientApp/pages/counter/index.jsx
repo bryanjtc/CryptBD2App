@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
+import Head from 'next/head';
 
 export default class Counter extends Component {
   static displayName = Counter.name;
@@ -19,6 +20,9 @@ export default class Counter extends Component {
   render() {
     return (
       <div>
+        <Head>
+          <title>Counter</title>
+        </Head>
         <h1>Counter</h1>
 
         <p>This is a simple example of a React component.</p>
@@ -27,7 +31,7 @@ export default class Counter extends Component {
           Current count: <strong>{this.state.currentCount}</strong>
         </p>
 
-        <button className={`btn ${styles["btn-primary"]}`} onClick={this.incrementCounter}>
+        <button className={`btn ${styles['btn-primary']}`} onClick={this.incrementCounter}>
           Increment
         </button>
       </div>
