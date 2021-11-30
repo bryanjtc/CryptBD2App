@@ -36,23 +36,21 @@ export class NavMenu extends Component {
             </Link>
             <Navbar.Toggle className="mr-2" />
             <Navbar.Collapse className="d-sm-inline-flex flex-sm-row-reverse">
-              <ul className="navbar-nav flex-grow">
-                <Nav.Item>
-                  <Link href="/" passHref>
-                    <Nav.Link className="text-dark">Home</Nav.Link>
-                  </Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Link href="/counter" passHref>
-                    <Nav.Link className="text-dark">Counter</Nav.Link>
-                  </Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Link href="/fetch-data" passHref>
-                    <Nav.Link className="text-dark">Fetch data</Nav.Link>
-                  </Link>
-                </Nav.Item>
-              </ul>
+              <Nav.Item>
+                <Link href="/" passHref>
+                  <Nav.Link className="text-dark">Home</Nav.Link>
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link href="/counter" passHref>
+                  <Nav.Link className="text-dark">Counter</Nav.Link>
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link href="/fetch-data" passHref>
+                  <Nav.Link className="text-dark">Fetch data</Nav.Link>
+                </Link>
+              </Nav.Item>
             </Navbar.Collapse>
           </Container>
         </Navbar>
