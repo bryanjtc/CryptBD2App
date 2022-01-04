@@ -4,8 +4,8 @@ version: 2
 updates:
   # Enable version updates for npm
   - package-ecosystem: 'npm'
-    # Look for `package.json` and `lock` files in the `root` directory
-    directory: '/'
+    # Look for `package.json` and `lock` files in the `ClientApp` directory
+    directory: '/ClientApp'
     schedule:
       interval: 'monthly'
       day: 'friday'
