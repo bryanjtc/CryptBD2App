@@ -13,7 +13,7 @@
     "react-router-dom": "6.24.0"
   },
   "devDependencies": {
-    "eslint": "8.57.0",
+    "eslint": "9.6.0",
     "eslint-config-next": "14.2.4",
     "prettier": "3.3.2"
   },
