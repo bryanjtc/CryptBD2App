@@ -21,3 +21,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .next/
+public/sw*
+public/swe-worker*
