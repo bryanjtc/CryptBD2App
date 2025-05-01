@@ -4,13 +4,13 @@
   "private": true,
   "dependencies": {
     "axios": "1.8.4",
-    "bootstrap": "5.3.3",
+    "bootstrap": "5.3.5",
     "next": "15.0.3",
     "react": "18.3.1",
     "react-bootstrap": "2.10.9",
     "react-dom": "18.3.1",
     "react-router-dom": "6.28.1",
-    "@serwist/next": "9.0.12"
+    "@serwist/next": "9.0.14"
   },
   "devDependencies": {
     "eslint": "9.23.0",
