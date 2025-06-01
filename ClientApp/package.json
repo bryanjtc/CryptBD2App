@@ -13,7 +13,7 @@
     "@serwist/next": "9.0.14"
   },
   "devDependencies": {
-    "eslint": "9.23.0",
+    "eslint": "9.28.0",
     "eslint-config-next": "15.0.3",
     "prettier": "3.4.2",
     "serwist": "^9.0.9"
